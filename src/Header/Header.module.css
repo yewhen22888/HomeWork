@@ -1,0 +1,23 @@
+.Header{
+    display: grid;
+  grid-template-areas: 
+  "l u h";
+  grid-template-columns: 15fr 1fr 1fr;
+  }
+  
+  .LogoSrc {
+   grid-area: l;
+    padding: 12px;
+    height: 90px;
+    width: 400px;
+    border: 5px;
+    
+  }
+   .HomeSrc {
+    grid-area: h;
+    height: 50px;
+   }
+   .UserSrc {
+    grid-area: u;
+    height: 50px;
+   }

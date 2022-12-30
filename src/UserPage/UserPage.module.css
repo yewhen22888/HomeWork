@@ -1,0 +1,22 @@
+.Page {
+    display: grid;
+    grid-template-areas:
+        "l i";
+}
+
+.Logo {
+    grid-area: l;
+    padding: 40px;
+    width: 400px;
+}
+
+.Input {
+    grid-area: i;
+    padding-top: 150px;
+    padding-right: 300px;
+}
+
+.item {
+    padding: 10px;
+font-weight: 750;
+}
