@@ -9,22 +9,38 @@ export type tasktype = {
 }
 
 type Propstype = {
-  task: Array<tasktype>
+  TaskForName: Array<tasktype>
+  TaskForNumber: Array<tasktype>
   addName: (Name: string) => void
+  addNumber: (Name: string) => void
+  RemoweName: () => void
+  RemoweNumber: () => void
 }
 
 
 const UserPage = (props: Propstype) => {
 
   const [NewTaskName, setNewTaskName] = useState('');
-  const ValueChange = (e: ChangeEvent<HTMLInputElement>) => {
+
+  const ValueNameChange = (e: ChangeEvent<HTMLInputElement>) => {
     setNewTaskName(e.currentTarget.value)
   }
-  const OnClichHandler = () => {
-    props.addName(NewTaskName);
-    
+
+  const [NewTaskNumber, setNewTaskNumber] = useState('')
+
+  const ValueNumberChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setNewTaskNumber(e.currentTarget.value)
   }
 
+  const OnClichNameHandler = () => {
+    props.addName(NewTaskName);
+    setNewTaskName('')
+  }
+
+  const OnClichNumberHandler = () => {
+    props.addNumber(NewTaskNumber);
+    setNewTaskNumber('')
+  }
 
 
 
@@ -33,19 +49,24 @@ const UserPage = (props: Propstype) => {
       <img className={s.Logo} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSJJSFcWEKr6nqzqWPn1KNSIqWTWJsiICKQLJFYQXIOjunf-nDlblfXPC3NNWGAz8HpsA&usqp=CAU" />
       <ul className={s.Input}>
         <div className={s.item}>
-          User Name"{props.task[0].Name}"<button>x</button>
+          User Name"{props.TaskForName[0].Name}"<button onClick={props.RemoweName}>x</button>
         </div>
         <div>
-          <input disabled={props.task[0].disabled}
+          <input disabled={props.TaskForName[0].disabled}
             placeholder='input to add User Name'
             value={NewTaskName}
-            onChange={ValueChange} />
-          <button onClick={OnClichHandler}>add</button>
+            onChange={ValueNameChange} />
+          <button onClick={OnClichNameHandler} disabled={props.TaskForName[0].disabled}>add</button>
         </div>
 
 
-        {/* <div className={s.item}>User Number</div>
-      <div><input placeholder='input to add User Number'/></div> */}
+        <div className={s.item}>User Number"{props.TaskForNumber[0].Name}"<button onClick={props.RemoweNumber}>x</button></div>
+        <div><input disabled={props.TaskForNumber[0].disabled}
+          placeholder='input to add User Name'
+          value={NewTaskNumber}
+          onChange={ValueNumberChange} />
+          <button onClick={OnClichNumberHandler} disabled={props.TaskForNumber[0].disabled}>add</button>
+        </div>
 
       </ul>
     </div>

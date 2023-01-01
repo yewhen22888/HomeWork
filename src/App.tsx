@@ -9,18 +9,47 @@ function App() {
 
 
 
-  let [Task, setTask] = useState([{ id: 1, Name: '', disabled: false }]);
+  let [TaskForName, setTaskForName] = useState([{ id: 1, Name: '', disabled: false }]);
 
   function addName(Name: string) {
-    let changeTask = { id: 1, Name: Name, disabled: true };
-    let Tasks = [changeTask]
-    setTask(Tasks)
+    let changeTask = [{ id: 1, Name: Name, disabled: true }];
+    setTaskForName(changeTask)
+
   }
+
+  function RemoweName() {
+    let RemoweAdd = [{ id: 1, Name: '', disabled: false }];
+    setTaskForName(RemoweAdd)
+  }
+
+
+
+
+  let [TaskForNumber, setTaskForNumber] = useState([{ id: 1, Name: '', disabled: false }]);
+
+  function addNumber(Name: string) {
+    let changeTask = [{ id: 1, Name: Name, disabled: true }];
+    setTaskForNumber(changeTask)
+
+  }
+
+  function RemoweNumber() {
+    let RemoweAdd = [{ id: 1, Name: '', disabled: false }];
+    setTaskForNumber(RemoweAdd)
+  }
+
+
 
   return (
     <div>
       <Header />
-      <UserPage task={Task} addName={addName}/>
+      <UserPage TaskForName={TaskForName}
+        addName={addName}
+        addNumber={addNumber}
+        RemoweName={RemoweName}
+        RemoweNumber={RemoweNumber}
+        TaskForNumber={TaskForNumber}
+      />
     </div>
 
   )
@@ -30,7 +59,5 @@ function App() {
 
 
 export default App;
-function v1(): any {
-  throw new Error('Function not implemented.');
-}
+
 
