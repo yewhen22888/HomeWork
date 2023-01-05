@@ -13,13 +13,14 @@ let task = [
 const DialogsHomePage = () => {
     return (
         <div>
-        {task.map((t) => {
-        return(
-           <div>
-{t.message}
-           </div> 
+            {task.map((t) => {
+                return (
+                    <div>
+                        {t.message}
+                    </div>
 
-            )})}
+                )
+            })}
         </div>
     )
 }
