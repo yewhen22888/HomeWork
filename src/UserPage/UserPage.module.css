@@ -2,12 +2,14 @@
     display: grid;
     grid-template-areas:
         "l i";
+    background-color: rgba(83, 229, 34, 0.811);
 }
 
 .Logo {
     grid-area: l;
     padding: 40px;
     width: 400px;
+   
 }
 
 .Input {
@@ -18,5 +20,5 @@
 
 .item {
     padding: 10px;
-font-weight: 750;
+    font-weight: 750;
 }

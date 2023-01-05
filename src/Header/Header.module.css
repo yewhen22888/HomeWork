@@ -1,23 +1,30 @@
-.Header{
-    display: grid;
-  grid-template-areas: 
-  "l u h";
+.Header {
+  display: grid;
+  grid-template-areas:
+    "l u h";
   grid-template-columns: 15fr 1fr 1fr;
-  }
+  background-color: hsla(338, 93%, 45%, 0.447);
+}
+
+.LogoSrc {
+  grid-area: l;
+  padding: 12px;
+  height: 90px;
+  width: 400px;
   
-  .LogoSrc {
-   grid-area: l;
-    padding: 12px;
-    height: 90px;
-    width: 400px;
-    border: 6px;
-    
-  }
-   .HomeSrc {
-    grid-area: h;
-    height: 50px;
-   }
-   .UserSrc {
-    grid-area: u;
-    height: 50px;
-   }
+  
+}
+
+.HomeSrc {
+  grid-area: h;
+  height: 50px;
+  padding-top: 30px;
+  padding-right: 35px
+}
+
+.UserSrc {
+  grid-area: u;
+  height: 50px;
+  padding-top: 30px;
+  padding-right: 65px;
+}

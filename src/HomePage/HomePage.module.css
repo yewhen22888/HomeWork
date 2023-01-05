@@ -1,0 +1,18 @@
+.NavbarWraper {
+    display: grid;
+    padding: 20px;
+    background-color:  rgba(83, 229, 34, 0.831);
+    grid-template-columns: 2fr 10fr;
+    grid-template-areas:
+        "N D";
+
+}
+
+.Nawbar {
+    grid-area: N;
+
+}
+
+.Dialogs {
+    grid-area: D;
+}

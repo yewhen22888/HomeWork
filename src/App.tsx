@@ -1,9 +1,12 @@
 
 import { useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import s from './App.module.css';
 import Header from './Header/Header';
+import HomePage from './HomePage/HomePage';
 import UserPage from './UserPage/UserPage';
 import { tasktype } from './UserPage/UserPage'
+
 
 function App() {
 
@@ -41,16 +44,25 @@ function App() {
 
 
   return (
-    <div>
-      <Header />
-      <UserPage TaskForName={TaskForName}
-        addName={addName}
-        addNumber={addNumber}
-        RemoweName={RemoweName}
-        RemoweNumber={RemoweNumber}
-        TaskForNumber={TaskForNumber}
-      />
-    </div>
+    <BrowserRouter>
+      <div>
+        <Header />
+        <Routes>
+
+          <Route path="/UserPage"
+            element={<UserPage
+              TaskForName={TaskForName}
+              addName={addName}
+              addNumber={addNumber}
+              RemoweName={RemoweName}
+              RemoweNumber={RemoweNumber}
+              TaskForNumber={TaskForNumber} />} />
+
+          <Route path="/HomePage/*" element={<HomePage />} />
+
+        </Routes>
+      </div>
+    </BrowserRouter>
 
   )
 }
