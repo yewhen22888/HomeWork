@@ -22,3 +22,10 @@
     padding: 10px;
     font-weight: 750;
 }
+.error {
+    border:red 1px solid;
+}
+
+.errorMessage {
+    color: red;
+}
