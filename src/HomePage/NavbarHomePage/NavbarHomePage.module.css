@@ -5,4 +5,9 @@
 
 .item {
     padding: 8px;
+    text-decoration: none !important;
+}
+
+.active {
+    text-decoration: none !important;
 }

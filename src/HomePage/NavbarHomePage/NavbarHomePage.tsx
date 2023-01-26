@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import s from './NavbarHomePage.module.css'
+import './Navbar.css'
 
 let TaskName = [
     { Name: 'Dimych', id: '1' },
@@ -22,10 +23,10 @@ const Navbar = () => {
                     <div className={s.item}><NavLink to={path}>
                         <div className={s.logo}>
                             <img src="https://i.pinimg.com/564x/e2/7c/87/e27c8735da98ec6ccdcf12e258b26475.jpg" />
-                        </div></NavLink>
-                        <div>
-                            {el.Name}
                         </div>
+                        <div className='active'>
+                            {el.Name}
+                        </div></NavLink>
                     </div>
 
                 )
