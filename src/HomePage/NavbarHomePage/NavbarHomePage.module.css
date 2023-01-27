@@ -3,11 +3,12 @@
     border-radius: 20px;
 }
 
+
 .item {
-    padding: 8px;
-    text-decoration: none !important;
+       text-decoration: none;
 }
 
+
 .active {
-    text-decoration: none !important;
+    color: rgb(16, 166, 230);
 }

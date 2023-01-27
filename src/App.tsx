@@ -13,10 +13,17 @@ function App() {
 
 
   let [TaskForName, setTaskForName] = useState([{ id: 1, Name: '', disabled: false }]);
+  let [TaskForNumber, setTaskForNumber] = useState([{ id: 1, Name: '', disabled: false }]);
 
   function addName(Name: string) {
     let changeTask = [{ id: 1, Name: Name, disabled: true }];
     setTaskForName(changeTask)
+
+  }
+
+  function addNumber(Name: string) {
+    let changeTask = [{ id: 1, Name: Name, disabled: true }];
+    setTaskForNumber(changeTask)
 
   }
 
@@ -25,23 +32,10 @@ function App() {
     setTaskForName(RemoweAdd)
   }
 
-
-
-
-  let [TaskForNumber, setTaskForNumber] = useState([{ id: 1, Name: '', disabled: false }]);
-
-  function addNumber(Name: string) {
-    let changeTask = [{ id: 1, Name: Name, disabled: true }];
-    setTaskForNumber(changeTask)
-
-  }
-
   function RemoweNumber() {
     let RemoweAdd = [{ id: 1, Name: '', disabled: false }];
     setTaskForNumber(RemoweAdd)
   }
-
-
 
   return (
     <BrowserRouter>
@@ -59,7 +53,15 @@ function App() {
               TaskForNumber={TaskForNumber} />} />
 
           <Route path="/HomePage/*" element={<HomePage />} />
-          
+
+          <Route path="/*" element={<UserPage
+            TaskForName={TaskForName}
+            addName={addName}
+            addNumber={addNumber}
+            RemoweName={RemoweName}
+            RemoweNumber={RemoweNumber}
+            TaskForNumber={TaskForNumber} />} />
+            
         </Routes>
       </div>
     </BrowserRouter>
